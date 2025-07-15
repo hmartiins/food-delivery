@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment } from 'react';
 import {
   FlatList,
   Image,
@@ -6,13 +6,13 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import cn from "clsx";
+import cn from 'clsx';
 
-import CartButton from "@/components/CartButton";
-import { images, offers } from "@/constants";
+import CartButton from '@/components/CartButton';
+import { images, offers } from '@/constants';
 
 export default function Index() {
   return (
@@ -25,14 +25,14 @@ export default function Index() {
             <View>
               <Pressable
                 className={cn(
-                  "offer-card",
-                  isEven ? "flex-row-reverse" : "flex-row"
+                  'offer-card',
+                  isEven ? 'flex-row-reverse' : 'flex-row'
                 )}
                 style={{
                   backgroundColor: item.color,
                 }}
                 android_ripple={{
-                  color: "#ffffff22",
+                  color: '#ffffff22',
                 }}
               >
                 {({ pressed }) => (
@@ -47,11 +47,11 @@ export default function Index() {
 
                     <View
                       className={cn(
-                        "offer-card__info",
-                        isEven ? "pl-10" : "pr-10"
+                        'offer-card__info',
+                        isEven ? 'pl-10' : 'pr-10'
                       )}
                     >
-                      <Text className="h1-bold text-white leading-tight">
+                      <Text className="h1-bold leading-tight text-white">
                         {item.title}
                       </Text>
                       <Image
@@ -69,10 +69,10 @@ export default function Index() {
         }}
         contentContainerClassName="pb-28 px-5"
         ListHeaderComponent={() => (
-          <View className="flex-between flex-row w-full my-5">
+          <View className="flex-between my-5 w-full flex-row">
             <View className="flex-start">
               <Text className="small-bold text-primary">DELIVER TO</Text>
-              <TouchableOpacity className="flex-row flex-center gap-x-1 mt-0.5">
+              <TouchableOpacity className="flex-center mt-0.5 flex-row gap-x-1">
                 <Text className="paragraph-bold text-dark-100">Brazil</Text>
                 <Image
                   source={images.arrowDown}
