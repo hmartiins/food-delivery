@@ -1,7 +1,11 @@
 import { MenuItem } from '@/type';
 import { Image, Platform, Text, TouchableOpacity } from 'react-native';
 
-const MenuCard = ({ item: { image_url, name, price } }: { item: MenuItem }) => {
+export const MenuCard = ({
+  item: { image_url, name, price },
+}: {
+  item: MenuItem;
+}) => {
   return (
     <TouchableOpacity
       className="menu-card"
@@ -29,5 +33,3 @@ const MenuCard = ({ item: { image_url, name, price } }: { item: MenuItem }) => {
     </TouchableOpacity>
   );
 };
-
-export default MenuCard;

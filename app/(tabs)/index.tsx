@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import cn from 'clsx';
 
-import CartButton from '@/components/CartButton';
+import { CartButton } from '@/components/CartButton';
 import { images, offers } from '@/constants';
 
 export default function Index() {

@@ -2,7 +2,7 @@ import { CustomButtonProps } from '@/type';
 import cn from 'clsx';
 import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native';
 
-const CustomButton = ({
+export const CustomButton = ({
   onPress,
   title,
   style,
@@ -25,5 +25,3 @@ const CustomButton = ({
     </TouchableOpacity>
   );
 };
-
-export default CustomButton;

@@ -1,5 +1,4 @@
-import CustomButton from '@/components/CustomButton';
-import CustomInput from '@/components/CustomInput';
+import { CustomButton, CustomInput } from '@/components';
 import { signIn } from '@/lib/appwrite';
 import { Link, router } from 'expo-router';
 import { useState } from 'react';

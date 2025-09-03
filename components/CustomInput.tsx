@@ -3,7 +3,7 @@ import cn from 'clsx';
 import { useState } from 'react';
 import { Text, TextInput, View } from 'react-native';
 
-const CustomInput = ({
+export const CustomInput = ({
   placeholder = 'Enter text',
   value,
   onChangeText,
@@ -36,5 +36,3 @@ const CustomInput = ({
     </View>
   );
 };
-
-export default CustomInput;
