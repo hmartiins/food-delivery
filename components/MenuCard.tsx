@@ -6,7 +6,7 @@ const MenuCard = ({ item: { image_url, name, price } }: { item: MenuItem }) => {
     <TouchableOpacity
       className="menu-card"
       style={
-        Platform.OS == 'android'
+        Platform.OS === 'android'
           ? { elevation: 10, shadowColor: '#878787' }
           : {}
       }
