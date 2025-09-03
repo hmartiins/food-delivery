@@ -1,6 +1,6 @@
 import CartButton from '@/components/CartButton';
 import { getCategories, getMenu } from '@/lib/appwrite';
-import useAppwrite from '@/lib/useAppwrite';
+import { useAppwrite } from '@/lib/useAppwrite';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect } from 'react';
 import { FlatList, Text, View } from 'react-native';
