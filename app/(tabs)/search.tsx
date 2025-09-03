@@ -7,10 +7,10 @@ import { useLocalSearchParams } from 'expo-router';
 import cn from 'clsx';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { CartButton, MenuCard } from '@/components';
+import { CartButton, Filter, MenuCard, SearchBar } from '@/components';
 import { getCategories, getMenu } from '@/lib/appwrite';
 import { useAppwrite } from '@/lib/useAppwrite';
-import { MenuItem } from '@/type';
+import { Category, MenuItem } from '@/type';
 
 export default function Search() {
   const { category, query } = useLocalSearchParams<{
@@ -72,9 +72,9 @@ export default function Search() {
               <CartButton />
             </View>
 
-            <Text>Search Input</Text>
+            <SearchBar />
 
-            <Text>Filter</Text>
+            <Filter categories={categories! as Category[]} />
           </View>
         )}
         ListEmptyComponent={() => !loading && <Text>No results found</Text>}
