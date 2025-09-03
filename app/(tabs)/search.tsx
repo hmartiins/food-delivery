@@ -1,6 +1,9 @@
 import CartButton from '@/components/CartButton';
+import MenuCard from '@/components/MenuCard';
 import { getCategories, getMenu } from '@/lib/appwrite';
 import { useAppwrite } from '@/lib/useAppwrite';
+import { MenuItem } from '@/type';
+import cn from 'clsx';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect } from 'react';
 import { FlatList, Text, View } from 'react-native';
@@ -36,9 +39,16 @@ export default function Search() {
         columnWrapperClassName="gap-7"
         contentContainerClassName="gap-7 px-5 pb-32"
         renderItem={({ item, index }) => {
+          const isFirstRightColItem = index % 2 === 0;
+
           return (
-            <View className="max-w-[48%] flex-1">
-              <Text>{item.name}</Text>
+            <View
+              className={cn(
+                'max-w-[48%] flex-1',
+                !isFirstRightColItem ? 'mt-10' : 'mt-0'
+              )}
+            >
+              <MenuCard item={item as MenuItem} />
             </View>
           );
         }}
