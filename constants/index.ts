@@ -17,8 +17,6 @@ import search from '@/assets/icons/search.png';
 import star from '@/assets/icons/star.png';
 import trash from '@/assets/icons/trash.png';
 import user from '@/assets/icons/user.png';
-import arrowBack from '../assets/icons/arrow-back.png';
-
 import avatar from '@/assets/images/avatar.png';
 import avocado from '@/assets/images/avocado.png';
 import bacon from '@/assets/images/bacon.png';
@@ -40,6 +38,8 @@ import pizzaOne from '@/assets/images/pizza-one.png';
 import salad from '@/assets/images/salad.png';
 import success from '@/assets/images/success.png';
 import tomatoes from '@/assets/images/tomatoes.png';
+
+import arrowBack from '../assets/icons/arrow-back.png';
 
 export const CATEGORIES = [
   {

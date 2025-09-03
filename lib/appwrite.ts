@@ -1,4 +1,3 @@
-import { CreateUserParams, GetMenuParams, SignInParams } from '@/type';
 import {
   Account,
   Avatars,
@@ -8,6 +7,8 @@ import {
   Query,
   Storage,
 } from 'react-native-appwrite';
+
+import { CreateUserParams, GetMenuParams, SignInParams } from '@/type';
 
 export const appWriteConfig = {
   endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT!,
