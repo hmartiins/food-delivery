@@ -7,12 +7,17 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { images } from '@/constants';
 
 export const SearchBar = () => {
-  const params = useLocalSearchParams<{ query?: string }>();
-  const [query, setQuery] = useState(params.query || '');
+  const params = useLocalSearchParams<{ query: string }>();
+  const [query, setQuery] = useState(params.query);
 
   const handleSearch = (text: string) => {
     setQuery(text);
-    router.setParams({ query: text });
+
+    if (!text) router.setParams({ query: undefined });
+  };
+
+  const handleSubmit = () => {
+    if (query.trim()) router.setParams({ query });
   };
 
   return (
@@ -22,10 +27,15 @@ export const SearchBar = () => {
         placeholder="Search for pizzas, burgers..."
         value={query}
         onChangeText={handleSearch}
+        onSubmitEditing={handleSubmit}
         placeholderTextColor={'#a0a0a0'}
+        returnKeyType="search"
       />
 
-      <TouchableOpacity className="pr-5" onPress={() => handleSearch(query)}>
+      <TouchableOpacity
+        className="pr-5"
+        onPress={() => router.setParams({ query })}
+      >
         <Image
           source={images.search}
           className="size-6"
