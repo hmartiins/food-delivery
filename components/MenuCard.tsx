@@ -1,5 +1,6 @@
-import { MenuItem } from '@/type';
 import { Image, Platform, Text, TouchableOpacity } from 'react-native';
+
+import { MenuItem } from '@/type';
 
 export const MenuCard = ({
   item: { image_url, name, price },

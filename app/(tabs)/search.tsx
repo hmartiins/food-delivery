@@ -1,12 +1,16 @@
+import { useEffect } from 'react';
+
+import { FlatList, Text, View } from 'react-native';
+
+import { useLocalSearchParams } from 'expo-router';
+
+import cn from 'clsx';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { CartButton, MenuCard } from '@/components';
 import { getCategories, getMenu } from '@/lib/appwrite';
 import { useAppwrite } from '@/lib/useAppwrite';
 import { MenuItem } from '@/type';
-import cn from 'clsx';
-import { useLocalSearchParams } from 'expo-router';
-import { useEffect } from 'react';
-import { FlatList, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Search() {
   const { category, query } = useLocalSearchParams<{

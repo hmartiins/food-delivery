@@ -25,6 +25,73 @@ module.exports = defineConfig([
       'max-len': 'off',
       'no-trailing-spaces': 'off',
       'eol-last': 'off',
+
+      'import/order': [
+        'warn',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            ['parent', 'sibling', 'index'],
+          ],
+          pathGroups: [
+            {
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'react-native',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'expo-*',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: '@expo/**',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: '@/lib/**',
+              group: 'internal',
+            },
+            {
+              pattern: '@/stores/**',
+              group: 'internal',
+            },
+            {
+              pattern: '@/components/**',
+              group: 'internal',
+            },
+            {
+              pattern: '@/constants/**',
+              group: 'internal',
+            },
+            {
+              pattern: '@/assets/**',
+              group: 'internal',
+            },
+          ],
+          'newlines-between': 'always',
+          pathGroupsExcludedImportTypes: ['builtin'],
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+        },
+      ],
+      'sort-imports': [
+        'warn',
+        {
+          ignoreDeclarationSort: true,
+          ignoreMemberSort: false,
+        },
+      ],
     },
   },
 ]);
