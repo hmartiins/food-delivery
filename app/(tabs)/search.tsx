@@ -4,7 +4,6 @@ import { FlatList, Text, View } from 'react-native';
 
 import { useLocalSearchParams } from 'expo-router';
 
-import cn from 'clsx';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { CartButton, Filter, MenuCard, SearchBar } from '@/components';
@@ -40,21 +39,12 @@ export default function Search() {
         keyExtractor={item => item.$id}
         numColumns={2}
         columnWrapperClassName="gap-7"
-        contentContainerClassName="gap-7 px-5 pb-32"
-        renderItem={({ item, index }) => {
-          const isFirstRightColItem = index % 2 === 0;
-
-          return (
-            <View
-              className={cn(
-                'max-w-[48%] flex-1',
-                !isFirstRightColItem ? 'mt-10' : 'mt-0'
-              )}
-            >
-              <MenuCard item={item as MenuItem} />
-            </View>
-          );
-        }}
+        contentContainerClassName="gap-12 px-5 pb-32"
+        renderItem={({ item }) => (
+          <View className={'max-w-[48%] flex-1'}>
+            <MenuCard item={item as MenuItem} />
+          </View>
+        )}
         ListHeaderComponent={() => (
           <View className="my-5 gap-5">
             <View className="flex-between flex-row">
