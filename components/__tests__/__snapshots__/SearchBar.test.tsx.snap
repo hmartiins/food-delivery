@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar /> snapshot test 1`] = `
+<View
+  className="searchbar"
+  testID="search-container"
+>
+  <TextInput
+    className="flex-1 p-5"
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="Search for pizzas, burgers..."
+    placeholderTextColor="#a0a0a0"
+    returnKeyType="search"
+    testID="search-input"
+    value="test query"
+  />
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "opacity": 1,
+      }
+    }
+    testID="search-button"
+  >
+    <Image
+      className="size-6"
+      resizeMode="contain"
+      source="search-icon"
+      tintColor="#5d5f6d"
+    />
+  </View>
+</View>
+`;
