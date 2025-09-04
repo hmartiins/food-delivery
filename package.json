@@ -18,7 +18,31 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "collectCoverageFrom": [
+      "app/**/*.{js,jsx,ts,tsx}",
+      "components/**/*.{js,jsx,ts,tsx}",
+      "lib/**/*.{js,jsx,ts,tsx}",
+      "stores/**/*.{js,jsx,ts,tsx}",
+      "!**/__tests__/**",
+      "!**/*.test.{js,jsx,ts,tsx}",
+      "!**/_layout.{js,jsx,ts,tsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
