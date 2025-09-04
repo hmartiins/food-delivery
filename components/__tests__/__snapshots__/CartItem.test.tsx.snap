@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartItem /> snapshot of the component 1`] = `
+<View
+  className="cart-item"
+>
+  <View
+    className="flex flex-row items-center gap-x-3"
+  >
+    <View
+      className="cart-item__image"
+    >
+      <Image
+        className="size-4/5 rounded-lg"
+        resizeMode="cover"
+        source={
+          {
+            "uri": "https://example.com/burger.jpg",
+          }
+        }
+      />
+    </View>
+    <View>
+      <Text
+        className="base-bold text-dark-100"
+      >
+        Burger Deluxe
+      </Text>
+      <Text
+        className="paragraph-bold mt-1 text-primary"
+      >
+        $
+        15.99
+      </Text>
+      <View
+        className="mt-2 flex flex-row items-center gap-x-4"
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "opacity": 1,
+            }
+          }
+          testID="decrease-qty-button"
+        >
+          <Image
+            className="size-1/2"
+            resizeMode="contain"
+            source="minus-icon"
+            tintColor="#FF9C01"
+          />
+        </View>
+        <Text
+          className="base-bold text-dark-100"
+        >
+          2
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "opacity": 1,
+            }
+          }
+          testID="increase-qty-button"
+        >
+          <Image
+            className="size-1/2"
+            resizeMode="contain"
+            source="plus-icon"
+            tintColor="#FF9C01"
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "opacity": 1,
+      }
+    }
+    testID="remove-item-button"
+  >
+    <Image
+      className="size-5"
+      resizeMode="contain"
+      source="trash-icon"
+    />
+  </View>
+</View>
+`;

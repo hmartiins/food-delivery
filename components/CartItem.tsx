@@ -28,6 +28,7 @@ export const CartItem = ({ item }: { item: CartItemType }) => {
             <TouchableOpacity
               onPress={() => decreaseQty(item.id, item.customizations!)}
               className="cart-item__actions"
+              testID="decrease-qty-button"
             >
               <Image
                 source={images.minus}
@@ -42,6 +43,7 @@ export const CartItem = ({ item }: { item: CartItemType }) => {
             <TouchableOpacity
               onPress={() => increaseQty(item.id, item.customizations!)}
               className="cart-item__actions"
+              testID="increase-qty-button"
             >
               <Image
                 source={images.plus}
@@ -57,6 +59,7 @@ export const CartItem = ({ item }: { item: CartItemType }) => {
       <TouchableOpacity
         onPress={() => removeItem(item.id, item.customizations!)}
         className="flex-center"
+        testID="remove-item-button"
       >
         <Image source={images.trash} className="size-5" resizeMode="contain" />
       </TouchableOpacity>
