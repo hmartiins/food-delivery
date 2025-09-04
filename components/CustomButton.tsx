@@ -17,7 +17,11 @@ export const CustomButton = ({
       {leftIcon}
       <View className="flex-center flex-row">
         {isLoading ? (
-          <ActivityIndicator size="small" color="#fff" />
+          <ActivityIndicator
+            testID="loading-indicator"
+            size="small"
+            color="#fff"
+          />
         ) : (
           <Text className={cn('paragraph-semibold text-white-100', textStyle)}>
             {title}
