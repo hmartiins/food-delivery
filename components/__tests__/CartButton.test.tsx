@@ -1,4 +1,6 @@
-import { render } from '@testing-library/react-native';
+import { router } from 'expo-router';
+
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { CartButton } from '../CartButton';
 
@@ -15,6 +17,15 @@ jest.mock('@/stores/cart.store', () => ({
 
 describe('<CartButton />', () => {
   beforeEach(() => jest.clearAllMocks());
+
+  test('navigate to cart page when button is pressed', () => {
+    const { getByTestId } = render(<CartButton />);
+    const button = getByTestId('cart-button');
+
+    fireEvent.press(button);
+
+    expect(router.push).toHaveBeenCalledWith('/cart');
+  });
 
   test('renders cart button without badge when there are no items', () => {
     mockGetTotalItems.mockReturnValue(0);
