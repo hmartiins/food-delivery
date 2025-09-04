@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CustomInput /> snapshot of the component 1`] = `
+<View
+  className="w-full"
+>
+  <Text
+    className="label"
+  >
+    Complete Snapshot Test
+  </Text>
+  <TextInput
+    autoCapitalize="none"
+    autoCorrect={false}
+    className="border-gray-300"
+    keyboardType="numeric"
+    onBlur={[Function]}
+    onChangeText={[MockFunction]}
+    onFocus={[Function]}
+    placeholder="Enter your text"
+    placeholderTextColor="#888"
+    secureTextEntry={false}
+    testID="input"
+    value="test value"
+  />
+</View>
+`;

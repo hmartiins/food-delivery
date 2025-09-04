@@ -21,6 +21,7 @@ export const CustomInput = ({
       <Text className="label">{label}</Text>
 
       <TextInput
+        testID="input"
         autoCapitalize="none"
         autoCorrect={false}
         value={value}
