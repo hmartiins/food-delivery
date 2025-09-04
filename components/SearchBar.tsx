@@ -23,6 +23,7 @@ export const SearchBar = () => {
   return (
     <View className="searchbar" testID="search-container">
       <TextInput
+        testID="search-input"
         className="flex-1 p-5"
         placeholder="Search for pizzas, burgers..."
         value={query}
