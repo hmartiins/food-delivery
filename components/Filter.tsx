@@ -28,34 +28,52 @@ export const Filter = ({ categories }: { categories: Category[] }) => {
 
   return (
     <FlatList
+      testID="filter-list"
       data={filterData}
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerClassName="gap-x-2 pb-3"
-      renderItem={({ item }) => (
-        <TouchableOpacity
-          key={item.$id}
-          onPress={() => handlePress(item.$id)}
-          className={cn(
-            'filter',
-            active === item.$id ? 'bg-amber-500' : 'bg-white'
-          )}
-          style={
-            Platform.OS === 'android'
-              ? { elevation: 5, shadowColor: '#878787' }
-              : {}
-          }
-        >
-          <Text
-            className={cn(
-              'body-medium',
-              active === item.$id ? 'text-white' : 'text-gray-200'
-            )}
+      accessible={true}
+      accessibilityRole="tablist"
+      accessibilityLabel="Category filters"
+      accessibilityHint="Swipe horizontally to browse different category filters"
+      renderItem={({ item }) => {
+        const isActive = active === item.$id;
+
+        return (
+          <TouchableOpacity
+            key={item.$id}
+            testID={`filter-item-${item.$id}`}
+            onPress={() => handlePress(item.$id)}
+            className={cn('filter', isActive ? 'bg-amber-500' : 'bg-white')}
+            style={
+              Platform.OS === 'android'
+                ? { elevation: 5, shadowColor: '#878787' }
+                : {}
+            }
+            accessible={true}
+            accessibilityRole="button"
+            accessibilityState={{ selected: isActive }}
+            accessibilityLabel={`${item.name} filter`}
+            accessibilityHint={
+              isActive
+                ? `${item.name} filter is currently active`
+                : `Tap to filter by ${item.name}`
+            }
           >
-            {item.name}
-          </Text>
-        </TouchableOpacity>
-      )}
+            <Text
+              testID={`filter-text-${item.$id}`}
+              className={cn(
+                'body-medium',
+                isActive ? 'text-white' : 'text-gray-200'
+              )}
+              accessible={false}
+            >
+              {item.name}
+            </Text>
+          </TouchableOpacity>
+        );
+      }}
       keyExtractor={item => item.$id}
     />
   );
