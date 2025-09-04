@@ -10,7 +10,7 @@ export const CustomHeader = ({ title }: CustomHeaderProps) => {
 
   return (
     <View className="custom-header">
-      <TouchableOpacity onPress={() => router.back()}>
+      <TouchableOpacity onPress={() => router.back()} testID="back-button">
         <Image
           source={images.arrowBack}
           className="size-5"
@@ -20,8 +20,16 @@ export const CustomHeader = ({ title }: CustomHeaderProps) => {
 
       {title && <Text className="base-semibold text-dark-100">{title}</Text>}
 
-      <TouchableOpacity onPress={() => router.push('/search')}>
-        <Image source={images.search} className="size-5" resizeMode="contain" />
+      <TouchableOpacity
+        onPress={() => router.push('/search')}
+        testID="search-button"
+      >
+        <Image
+          source={images.search}
+          className="size-5"
+          resizeMode="contain"
+          testID="search-icon"
+        />
       </TouchableOpacity>
     </View>
   );
