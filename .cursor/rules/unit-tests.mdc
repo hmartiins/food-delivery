@@ -241,6 +241,62 @@ fireEvent(element, 'blur');
 fireEvent.scroll(element, { nativeEvent: { contentOffset: { y: 100 } } });
 ```
 
+## Snapshot Testing Requirements
+
+### Always Implement Snapshot Tests
+
+**MANDATORY: Every component must have a snapshot test to ensure structural integrity**
+
+```typescript
+describe('<ComponentName /> Snapshots', () => {
+  it('should match snapshot with default props', () => {
+    const component = render(<ComponentName />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  it('should match snapshot with different states/props', () => {
+    const component = render(<ComponentName isActive={true} title="Test" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+});
+```
+
+### Snapshot Testing Guidelines
+
+- **Create snapshots for different component states**
+- **Include snapshots for various prop combinations**
+- **Update snapshots when component structure intentionally changes**
+
+## Test Execution Requirements
+
+### ALWAYS Run Tests After Implementation
+
+**MANDATORY: Execute all unit tests after every implementation or modification**
+
+```bash
+# Run all tests to ensure everything works
+npm run test
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Validation Process
+
+1. **After implementing/modifying any component**: Run the specific test file
+2. **Fix any failing tests**: Do not commit with failing tests
+3. **Update snapshots if needed**: Only when structural changes are intentional
+
+### Test Commands Usage
+
+```bash
+# Run specific test file
+npm test ComponentName.test.tsx
+
+# Run tests and update snapshots
+npm test -- --updateSnapshot
+```
+
 ## Remember
 
 - **ALWAYS add testID to components** instead of using fragile selectors
@@ -249,3 +305,5 @@ fireEvent.scroll(element, { nativeEvent: { contentOffset: { y: 100 } } });
 - **KEEP tests simple** and focused on one aspect per test
 - **USE React Native Testing Library** matchers, not DOM-specific ones
 - **MOCK navigation and external dependencies** appropriately
+- **IMPLEMENT snapshot tests** for every component to track structural changes
+- **RUN all tests** after every implementation to ensure code quality
