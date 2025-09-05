@@ -1,0 +1,1067 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index Screen Snapshots should match snapshot with default state 1`] = `
+<RNCSafeAreaView
+  className="flex-1 bg-white"
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  testID="index-safe-area"
+>
+  <RCTScrollView
+    ListHeaderComponent={[Function]}
+    contentContainerClassName="pb-28 px-5"
+    data={
+      [
+        {
+          "color": "#D33B0D",
+          "id": 1,
+          "image": {
+            "testUri": "../../../assets/images/burger-one.png",
+          },
+          "title": "SUMMER COMBO",
+        },
+        {
+          "color": "#DF5A0C",
+          "id": 2,
+          "image": {
+            "testUri": "../../../assets/images/burger-two.png",
+          },
+          "title": "BURGER BASH",
+        },
+        {
+          "color": "#084137",
+          "id": 3,
+          "image": {
+            "testUri": "../../../assets/images/pizza-one.png",
+          },
+          "title": "PIZZA PARTY",
+        },
+        {
+          "color": "#EB920C",
+          "id": 4,
+          "image": {
+            "testUri": "../../../assets/images/buritto.png",
+          },
+          "title": "BURRITO DELIGHT",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    testID="offers-list"
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+      >
+        <View
+          className="flex-between my-5 w-full flex-row"
+          testID="header-container"
+        >
+          <View
+            className="flex-start"
+            testID="location-section"
+          >
+            <Text
+              className="small-bold text-primary"
+              testID="deliver-to-text"
+            >
+              DELIVER TO
+            </Text>
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "opacity": 1,
+                }
+              }
+              testID="location-button"
+            >
+              <Text
+                className="paragraph-bold text-dark-100"
+                testID="location-text"
+              >
+                Brazil
+              </Text>
+              <Image
+                className="size-3"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-down.png",
+                  }
+                }
+                testID="location-arrow"
+              />
+            </View>
+          </View>
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "opacity": 1,
+              }
+            }
+            testID="cart-button"
+          >
+            <Image
+              className="size-5"
+              resizeMode="contain"
+              source={
+                {
+                  "testUri": "../../../assets/icons/bag.png",
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-1"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row-reverse"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#D33B0D",
+              }
+            }
+            testID="offer-card-1"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-1"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/burger-one.png",
+                  }
+                }
+                testID="offer-image-1"
+              />
+            </View>
+            <View
+              className="offer-card__info pl-10"
+              testID="offer-info-1"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-1"
+              >
+                SUMMER COMBO
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-2"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#DF5A0C",
+              }
+            }
+            testID="offer-card-2"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-2"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/burger-two.png",
+                  }
+                }
+                testID="offer-image-2"
+              />
+            </View>
+            <View
+              className="offer-card__info pr-10"
+              testID="offer-info-2"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-2"
+              >
+                BURGER BASH
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-3"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row-reverse"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#084137",
+              }
+            }
+            testID="offer-card-3"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-3"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/pizza-one.png",
+                  }
+                }
+                testID="offer-image-3"
+              />
+            </View>
+            <View
+              className="offer-card__info pl-10"
+              testID="offer-info-3"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-3"
+              >
+                PIZZA PARTY
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-4"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#EB920C",
+              }
+            }
+            testID="offer-card-4"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-4"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/buritto.png",
+                  }
+                }
+                testID="offer-image-4"
+              />
+            </View>
+            <View
+              className="offer-card__info pr-10"
+              testID="offer-info-4"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-4"
+              >
+                BURRITO DELIGHT
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RNCSafeAreaView>
+`;
+
+exports[`Index Screen Snapshots should match snapshot with offers data 1`] = `
+<RNCSafeAreaView
+  className="flex-1 bg-white"
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  testID="index-safe-area"
+>
+  <RCTScrollView
+    ListHeaderComponent={[Function]}
+    contentContainerClassName="pb-28 px-5"
+    data={
+      [
+        {
+          "color": "#D33B0D",
+          "id": 1,
+          "image": {
+            "testUri": "../../../assets/images/burger-one.png",
+          },
+          "title": "SUMMER COMBO",
+        },
+        {
+          "color": "#DF5A0C",
+          "id": 2,
+          "image": {
+            "testUri": "../../../assets/images/burger-two.png",
+          },
+          "title": "BURGER BASH",
+        },
+        {
+          "color": "#084137",
+          "id": 3,
+          "image": {
+            "testUri": "../../../assets/images/pizza-one.png",
+          },
+          "title": "PIZZA PARTY",
+        },
+        {
+          "color": "#EB920C",
+          "id": 4,
+          "image": {
+            "testUri": "../../../assets/images/buritto.png",
+          },
+          "title": "BURRITO DELIGHT",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    testID="offers-list"
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+      >
+        <View
+          className="flex-between my-5 w-full flex-row"
+          testID="header-container"
+        >
+          <View
+            className="flex-start"
+            testID="location-section"
+          >
+            <Text
+              className="small-bold text-primary"
+              testID="deliver-to-text"
+            >
+              DELIVER TO
+            </Text>
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "opacity": 1,
+                }
+              }
+              testID="location-button"
+            >
+              <Text
+                className="paragraph-bold text-dark-100"
+                testID="location-text"
+              >
+                Brazil
+              </Text>
+              <Image
+                className="size-3"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-down.png",
+                  }
+                }
+                testID="location-arrow"
+              />
+            </View>
+          </View>
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "opacity": 1,
+              }
+            }
+            testID="cart-button"
+          >
+            <Image
+              className="size-5"
+              resizeMode="contain"
+              source={
+                {
+                  "testUri": "../../../assets/icons/bag.png",
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-1"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row-reverse"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#D33B0D",
+              }
+            }
+            testID="offer-card-1"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-1"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/burger-one.png",
+                  }
+                }
+                testID="offer-image-1"
+              />
+            </View>
+            <View
+              className="offer-card__info pl-10"
+              testID="offer-info-1"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-1"
+              >
+                SUMMER COMBO
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-2"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#DF5A0C",
+              }
+            }
+            testID="offer-card-2"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-2"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/burger-two.png",
+                  }
+                }
+                testID="offer-image-2"
+              />
+            </View>
+            <View
+              className="offer-card__info pr-10"
+              testID="offer-info-2"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-2"
+              >
+                BURGER BASH
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-3"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row-reverse"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#084137",
+              }
+            }
+            testID="offer-card-3"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-3"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/pizza-one.png",
+                  }
+                }
+                testID="offer-image-3"
+              />
+            </View>
+            <View
+              className="offer-card__info pl-10"
+              testID="offer-info-3"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-3"
+              >
+                PIZZA PARTY
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          testID="offer-item-4"
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            className="offer-card flex-row"
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#EB920C",
+              }
+            }
+            testID="offer-card-4"
+          >
+            <View
+              className="h-full w-1/2"
+              testID="offer-image-container-4"
+            >
+              <Image
+                className="size-full"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/images/buritto.png",
+                  }
+                }
+                testID="offer-image-4"
+              />
+            </View>
+            <View
+              className="offer-card__info pr-10"
+              testID="offer-info-4"
+            >
+              <Text
+                className="h1-bold leading-tight text-white"
+                testID="offer-title-4"
+              >
+                BURRITO DELIGHT
+              </Text>
+              <Image
+                className="size-10"
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../assets/icons/arrow-right.png",
+                  }
+                }
+                tintColor="#ffffff"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RNCSafeAreaView>
+`;

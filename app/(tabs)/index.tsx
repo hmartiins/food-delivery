@@ -17,14 +17,16 @@ import { images, offers } from '@/constants';
 
 export default function Index() {
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView testID="index-safe-area" className="flex-1 bg-white">
       <FlatList
+        testID="offers-list"
         data={offers}
         renderItem={({ item, index }) => {
           const isEven = index % 2 === 0;
           return (
-            <View>
+            <View testID={`offer-item-${item.id}`}>
               <Pressable
+                testID={`offer-card-${item.id}`}
                 className={cn(
                   'offer-card',
                   isEven ? 'flex-row-reverse' : 'flex-row'
@@ -38,8 +40,12 @@ export default function Index() {
               >
                 {({ pressed }) => (
                   <Fragment>
-                    <View className="h-full w-1/2">
+                    <View
+                      testID={`offer-image-container-${item.id}`}
+                      className="h-full w-1/2"
+                    >
                       <Image
+                        testID={`offer-image-${item.id}`}
                         source={item.image}
                         className="size-full"
                         resizeMode="contain"
@@ -47,12 +53,16 @@ export default function Index() {
                     </View>
 
                     <View
+                      testID={`offer-info-${item.id}`}
                       className={cn(
                         'offer-card__info',
                         isEven ? 'pl-10' : 'pr-10'
                       )}
                     >
-                      <Text className="h1-bold leading-tight text-white">
+                      <Text
+                        testID={`offer-title-${item.id}`}
+                        className="h1-bold leading-tight text-white"
+                      >
                         {item.title}
                       </Text>
                       <Image
@@ -70,12 +80,29 @@ export default function Index() {
         }}
         contentContainerClassName="pb-28 px-5"
         ListHeaderComponent={() => (
-          <View className="flex-between my-5 w-full flex-row">
-            <View className="flex-start">
-              <Text className="small-bold text-primary">DELIVER TO</Text>
-              <TouchableOpacity className="flex-center mt-0.5 flex-row gap-x-1">
-                <Text className="paragraph-bold text-dark-100">Brazil</Text>
+          <View
+            testID="header-container"
+            className="flex-between my-5 w-full flex-row"
+          >
+            <View testID="location-section" className="flex-start">
+              <Text
+                testID="deliver-to-text"
+                className="small-bold text-primary"
+              >
+                DELIVER TO
+              </Text>
+              <TouchableOpacity
+                testID="location-button"
+                className="flex-center mt-0.5 flex-row gap-x-1"
+              >
+                <Text
+                  testID="location-text"
+                  className="paragraph-bold text-dark-100"
+                >
+                  Brazil
+                </Text>
                 <Image
+                  testID="location-arrow"
                   source={images.arrowDown}
                   className="size-3"
                   resizeMode="contain"
