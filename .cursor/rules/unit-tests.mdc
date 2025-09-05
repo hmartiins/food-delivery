@@ -1,0 +1,251 @@
+---
+globs: *.test.tsx
+alwaysApply: false
+---
+
+# React Native Unit Testing Guidelines
+
+## Fundamental Principles
+
+- **FOCUS ONLY ON FUNCTIONALITY**: Test behaviors and interactions, not visual aspects
+- **DO NOT test**: styles, StyleSheet objects, colors, sizes, positioning, or any visual aspect
+- **TEST**: functionalities, user interactions, states, props, callbacks, and business logic
+
+## Element Selection Strategy
+
+### 1. Absolute Priority: `getByTestId`
+
+```typescript
+// ✅ PREFERRED - Use whenever possible
+const button = screen.getByTestId('submit-button');
+const input = screen.getByTestId('email-input');
+const list = screen.getByTestId('menu-list');
+```
+
+### 2. Base Component Modification
+
+**ALWAYS modify the original component to add testId when needed**
+
+```typescript
+// ❌ Before - component without testId
+<TouchableOpacity onPress={onSubmit}>
+  <Text>Submit</Text>
+</TouchableOpacity>
+
+// ✅ After - add testId to the component
+<TouchableOpacity testID="submit-button" onPress={onSubmit}>
+  <Text testID="submit-button-text">Submit</Text>
+</TouchableOpacity>
+```
+
+### 3. Alternatives Only When Necessary
+
+Use only when getByTestId is not viable:
+
+- `getByLabelText` for inputs with accessibility labels
+- `getByText` only for unique and stable texts
+- `getByPlaceholderText` for TextInput components
+- `getByDisplayValue` for TextInput with values
+
+## What to Test
+
+### ✅ ALWAYS TEST:
+
+- **Basic rendering**: component renders without errors
+- **Props**: behavior based on different props
+- **Interactions**: presses, text changes, scrolling, swipes
+- **States**: internal state changes
+- **Callbacks**: if functions are called correctly (onPress, onChangeText, etc.)
+- **Conditional logic**: different flows based on conditions
+- **Functional accessibility**: accessibility labels, hints, roles
+- **Navigation**: screen transitions and route params
+
+### ❌ NEVER TEST:
+
+- StyleSheet objects or style props
+- Colors, sizes, margins, padding, borderRadius
+- Positioning, layout, or flexbox properties
+- Animations or transitions (Animated values)
+- Fonts, fontWeight, fontSize, or typography
+- Component tree structure snapshots
+- Internal implementations (private methods)
+- Platform-specific styling (Platform.OS checks for styling)
+
+## Testing Patterns
+
+### Basic Structure
+
+```typescript
+describe('<ComponentName />', () => {
+  it('should render without errors', () => {
+    render(<ComponentName />);
+    expect(screen.getByTestId('component-container')).toBeTruthy();
+  });
+
+  it('should call callback when pressed', () => {
+    const mockCallback = jest.fn();
+    render(<ComponentName onPress={mockCallback} />);
+
+    fireEvent.press(screen.getByTestId('action-button'));
+    expect(mockCallback).toHaveBeenCalled();
+  });
+
+  it('should handle text input changes', () => {
+    const mockOnChangeText = jest.fn();
+    render(<ComponentName onChangeText={mockOnChangeText} />);
+
+    fireEvent.changeText(screen.getByTestId('text-input'), 'new text');
+    expect(mockOnChangeText).toHaveBeenCalledWith('new text');
+  });
+});
+```
+
+### Testing Props
+
+```typescript
+it('should display correct title based on prop', () => {
+  const title = 'Test Title';
+  render(<ComponentName title={title} />);
+
+  expect(screen.getByTestId('component-title')).toHaveTextContent(title);
+});
+```
+
+### Testing States
+
+```typescript
+it('should toggle state when pressed', () => {
+  render(<ComponentName />);
+  const toggleButton = screen.getByTestId('toggle-button');
+
+  // Initial state
+  expect(screen.getByTestId('status-indicator')).toHaveTextContent('Inactive');
+
+  // After press
+  fireEvent.press(toggleButton);
+  expect(screen.getByTestId('status-indicator')).toHaveTextContent('Active');
+});
+```
+
+## testID Conventions
+
+### Naming
+
+- Use kebab-case: `menu-item`, `search-input`
+- Be descriptive: `add-to-cart-button`, `user-profile-image`
+- Include context when necessary: `header-search-bar`, `modal-close-button`
+
+### Patterns by Element Type
+
+```typescript
+// Containers
+<View testID="component-container">
+<SafeAreaView testID="safe-area">
+<KeyboardAvoidingView testID="keyboard-wrapper">
+
+// Buttons
+<TouchableOpacity testID="submit-button">
+<Pressable testID="pressable-action">
+<Button testID="cancel-action">
+
+// Inputs
+<TextInput testID="email-input">
+<TextInput testID="password-input">
+
+// Lists and Scrollables
+<FlatList testID="menu-list">
+<ScrollView testID="content-scroll">
+<SectionList testID="section-list">
+
+// Text Components
+<Text testID="status-message">
+<Text testID="error-text">
+
+// Images
+<Image testID="user-avatar">
+<ImageBackground testID="background-image">
+
+// Modals
+<Modal testID="confirmation-modal">
+```
+
+## React Native Specific Testing Patterns
+
+### Testing FlatList Components
+
+```typescript
+it('should render list items correctly', () => {
+  const mockData = [{ id: '1', name: 'Item 1' }, { id: '2', name: 'Item 2' }];
+  render(<ComponentName data={mockData} />);
+
+  expect(screen.getByTestId('flat-list')).toBeTruthy();
+  expect(screen.getByText('Item 1')).toBeTruthy();
+  expect(screen.getByText('Item 2')).toBeTruthy();
+});
+```
+
+### Testing Navigation
+
+```typescript
+it('should navigate when button is pressed', () => {
+  const mockNavigate = jest.fn();
+  const mockNavigation = { navigate: mockNavigate };
+
+  render(<ComponentName navigation={mockNavigation} />);
+
+  fireEvent.press(screen.getByTestId('navigate-button'));
+  expect(mockNavigate).toHaveBeenCalledWith('TargetScreen');
+});
+```
+
+### Testing TextInput
+
+```typescript
+it('should update input value on text change', () => {
+  render(<ComponentName />);
+  const input = screen.getByTestId('search-input');
+
+  fireEvent.changeText(input, 'search query');
+  expect(input.props.value).toBe('search query');
+});
+```
+
+## React Native Testing Matchers
+
+### Use React Native Specific Matchers
+
+```typescript
+// ✅ Correct for React Native
+expect(element).toBeTruthy();
+expect(element).toHaveTextContent('expected text');
+expect(element).toHaveProp('propName', 'expectedValue');
+
+// ❌ Avoid DOM-specific matchers
+expect(element).toBeInTheDocument(); // This is for web DOM
+expect(element).toBeVisible(); // Use toBeTruthy() instead
+```
+
+## Common React Native Events
+
+```typescript
+// Touch events
+fireEvent.press(element);
+fireEvent.longPress(element);
+
+// Text input events
+fireEvent.changeText(element, 'new text');
+fireEvent(element, 'focus');
+fireEvent(element, 'blur');
+
+// Scroll events
+fireEvent.scroll(element, { nativeEvent: { contentOffset: { y: 100 } } });
+```
+
+## Remember
+
+- **ALWAYS add testID to components** instead of using fragile selectors
+- **FOCUS on functionality**, not appearance or styling
+- **TEST behaviors and user interactions**, not implementations
+- **KEEP tests simple** and focused on one aspect per test
+- **USE React Native Testing Library** matchers, not DOM-specific ones
+- **MOCK navigation and external dependencies** appropriately
