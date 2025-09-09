@@ -33,8 +33,9 @@ export default function Search() {
   }, [category, query]);
 
   return (
-    <SafeAreaView className="h-full bg-white ">
+    <SafeAreaView className="h-full bg-white " testID="search-safe-area">
       <FlatList
+        testID="search-results-list"
         data={data}
         keyExtractor={item => item.$id}
         numColumns={2}
@@ -46,14 +47,20 @@ export default function Search() {
           </View>
         )}
         ListHeaderComponent={() => (
-          <View className="my-5 gap-5">
-            <View className="flex-between flex-row">
+          <View className="my-5 gap-5" testID="search-header">
+            <View className="flex-between flex-row" testID="search-header-top">
               <View className="flex-start">
-                <Text className="small-bold uppercase text-primary">
+                <Text
+                  className="small-bold uppercase text-primary"
+                  testID="search-title"
+                >
                   Search
                 </Text>
                 <View className="flex-start mt-0.5 flex-row gap-x-1">
-                  <Text className="paragraph-semibold text-dark-100">
+                  <Text
+                    className="paragraph-semibold text-dark-100"
+                    testID="search-subtitle"
+                  >
                     Find your favorite food
                   </Text>
                 </View>
@@ -67,7 +74,9 @@ export default function Search() {
             <Filter categories={categories! as Category[]} />
           </View>
         )}
-        ListEmptyComponent={() => !loading && <Text>No results found</Text>}
+        ListEmptyComponent={() =>
+          !loading && <Text testID="empty-results-text">No results found</Text>
+        }
       />
     </SafeAreaView>
   );

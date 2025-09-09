@@ -1,7 +1,3 @@
-import { images } from '@/constants';
-import { useAuthStore } from '@/stores/auth.store';
-
-import { Redirect, Slot } from 'expo-router';
 import {
   Dimensions,
   ImageBackground,
@@ -10,6 +6,11 @@ import {
   ScrollView,
   View,
 } from 'react-native';
+
+import { Redirect, Slot } from 'expo-router';
+
+import { images } from '@/constants';
+import { useAuthStore } from '@/stores/auth.store';
 
 export default function AuthLayout() {
   const { isAuthenticated } = useAuthStore();
