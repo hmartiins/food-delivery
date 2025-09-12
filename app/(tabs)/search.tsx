@@ -7,6 +7,8 @@ import { useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { CartButton, Filter, MenuCard, SearchBar } from '@/components';
+import { EmptyData } from '@/components/EmptyData';
+import { images } from '@/constants';
 import { getCategories, getMenu } from '@/lib/appwrite';
 import { useAppwrite } from '@/lib/useAppwrite';
 import { Category, MenuItem } from '@/type';
@@ -75,7 +77,13 @@ export default function Search() {
           </View>
         )}
         ListEmptyComponent={() =>
-          !loading && <Text testID="empty-results-text">No results found</Text>
+          !loading && (
+            <EmptyData
+              title="Nothing matched your search"
+              subtitle="Try a different search term or check for typos."
+              image={images.search}
+            />
+          )
         }
       />
     </SafeAreaView>
