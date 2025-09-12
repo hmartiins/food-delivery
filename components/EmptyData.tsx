@@ -22,12 +22,20 @@ export const EmptyData = ({
               source={image}
               className="size-5 text-white"
               tintColor={'#FFFF'}
+              testID="custom-icon"
             />
           </View>
         </View>
       </View>
-      <Text className="base-bold my-3 text-center text-dark-100">{title}</Text>
-      <Text className="body-regular text-gray-200">{subtitle}</Text>
+      <Text
+        className="base-bold my-3 text-center text-dark-100"
+        testID="empty-data-title"
+      >
+        {title}
+      </Text>
+      <Text className="body-regular text-gray-200" testID="empty-data-subtitle">
+        {subtitle}
+      </Text>
     </View>
   );
 };

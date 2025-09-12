@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EmptyData /> snapshots should match snapshot with default props 1`] = `
+<View
+  className="flex flex-col items-center justify-center"
+>
+  <View
+    className="relative"
+  >
+    <Image
+      className="mb-8"
+      source={
+        {
+          "testUri": "../../../assets/images/empty-state.png",
+        }
+      }
+    />
+    <View
+      className="absolute inset-0 top-1/2 flex items-center justify-center"
+    >
+      <View
+        className="flex size-14 items-center justify-center rounded-full bg-primary"
+      >
+        <Image
+          className="size-5 text-white"
+          source={
+            {
+              "testUri": "../../../assets/icons/search.png",
+            }
+          }
+          testID="custom-icon"
+          tintColor="#FFFF"
+        />
+      </View>
+    </View>
+  </View>
+  <Text
+    className="base-bold my-3 text-center text-dark-100"
+    testID="empty-data-title"
+  >
+    Nothing matched your search
+  </Text>
+  <Text
+    className="body-regular text-gray-200"
+    testID="empty-data-subtitle"
+  >
+    Try a different search term or check for typos.
+  </Text>
+</View>
+`;
