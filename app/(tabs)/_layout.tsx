@@ -37,6 +37,7 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        animation: 'shift',
         tabBarStyle: {
           borderTopLeftRadius: 50,
           borderTopRightRadius: 50,

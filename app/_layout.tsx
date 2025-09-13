@@ -53,7 +53,13 @@ export default Sentry.wrap(function RootLayout() {
   return (
     <>
       <StatusBar style="dark" />
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: 'ios_from_right',
+          gestureEnabled: true,
+        }}
+      />
     </>
   );
 });
