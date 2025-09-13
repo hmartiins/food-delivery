@@ -4,6 +4,8 @@ import cn from 'clsx';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { CartItem, CustomButton, CustomHeader } from '@/components';
+import { EmptyData } from '@/components/EmptyData';
+import { images } from '@/constants';
 import { useCartStore } from '@/stores/cart.store';
 import { PaymentInfoStripeProps } from '@/type';
 
@@ -37,7 +39,15 @@ const Cart = () => {
         keyExtractor={item => item.id}
         contentContainerClassName="pb-28 px-5 pt-5"
         ListHeaderComponent={() => <CustomHeader title="Your Cart" />}
-        ListEmptyComponent={() => <Text>Cart Empty</Text>}
+        ListEmptyComponent={() => (
+          <View className="min-h-[400px] flex-1 justify-center">
+            <EmptyData
+              title="Cart Empty"
+              subtitle="Add items to your cart to get started"
+              image={images.bag}
+            />
+          </View>
+        )}
         ListFooterComponent={() =>
           totalItems > 0 && (
             <View className="gap-5">
