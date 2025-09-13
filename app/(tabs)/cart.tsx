@@ -32,15 +32,19 @@ const Cart = () => {
   const totalPrice = getTotalPrice();
 
   return (
-    <SafeAreaView className="h-full bg-white">
+    <SafeAreaView className="h-full bg-white" testID="cart-container">
       <FlatList
+        testID="cart-list"
         data={items}
         renderItem={({ item }) => <CartItem item={item} />}
         keyExtractor={item => item.id}
         contentContainerClassName="pb-28 px-5 pt-5"
         ListHeaderComponent={() => <CustomHeader title="Your Cart" />}
         ListEmptyComponent={() => (
-          <View className="min-h-[400px] flex-1 justify-center">
+          <View
+            className="min-h-[400px] flex-1 justify-center"
+            testID="empty-cart-container"
+          >
             <EmptyData
               title="Cart Empty"
               subtitle="Add items to your cart to get started"
@@ -50,9 +54,12 @@ const Cart = () => {
         )}
         ListFooterComponent={() =>
           totalItems > 0 && (
-            <View className="gap-5">
+            <View className="gap-5" testID="cart-footer">
               <View className="mt-6 rounded-2xl border border-gray-200 p-5">
-                <Text className="h3-bold mb-5 text-dark-100">
+                <Text
+                  className="h3-bold mb-5 text-dark-100"
+                  testID="payment-summary-title"
+                >
                   Payment Summary
                 </Text>
 

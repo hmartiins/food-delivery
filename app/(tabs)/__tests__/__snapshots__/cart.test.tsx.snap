@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Screen Snapshots should match snapshot with cart items 1`] = `
+<RNCSafeAreaView
+  className="h-full bg-white"
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  testID="cart-container"
+>
+  <RCTScrollView
+    ListEmptyComponent={[Function]}
+    ListFooterComponent={[Function]}
+    ListHeaderComponent={[Function]}
+    contentContainerClassName="pb-28 px-5 pt-5"
+    data={[]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    testID="cart-list"
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+      />
+      <View
+        className="min-h-[400px] flex-1 justify-center"
+        testID="empty-cart-container"
+      >
+        <View
+          className="flex flex-col items-center justify-center"
+        >
+          <View
+            className="relative"
+          >
+            <Image
+              className="mb-8"
+              source={
+                {
+                  "testUri": "../../../assets/images/empty-state.png",
+                }
+              }
+            />
+            <View
+              className="absolute inset-0 top-1/2 flex items-center justify-center"
+            >
+              <View
+                className="flex size-14 items-center justify-center rounded-full bg-primary"
+              >
+                <Image
+                  className="size-5 text-white"
+                  source={
+                    {
+                      "testUri": "../../../assets/icons/bag.png",
+                    }
+                  }
+                  testID="custom-icon"
+                  tintColor="#FFFF"
+                />
+              </View>
+            </View>
+          </View>
+          <Text
+            className="base-bold my-3 text-center text-dark-100"
+            testID="empty-data-title"
+          >
+            Cart Empty
+          </Text>
+          <Text
+            className="body-regular text-gray-200"
+            testID="empty-data-subtitle"
+          >
+            Add items to your cart to get started
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+</RNCSafeAreaView>
+`;
+
+exports[`Cart Screen Snapshots should match snapshot with empty cart 1`] = `
+<RNCSafeAreaView
+  className="h-full bg-white"
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  testID="cart-container"
+>
+  <RCTScrollView
+    ListEmptyComponent={[Function]}
+    ListFooterComponent={[Function]}
+    ListHeaderComponent={[Function]}
+    contentContainerClassName="pb-28 px-5 pt-5"
+    data={[]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    testID="cart-list"
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+      />
+      <View
+        className="min-h-[400px] flex-1 justify-center"
+        testID="empty-cart-container"
+      >
+        <View
+          className="flex flex-col items-center justify-center"
+        >
+          <View
+            className="relative"
+          >
+            <Image
+              className="mb-8"
+              source={
+                {
+                  "testUri": "../../../assets/images/empty-state.png",
+                }
+              }
+            />
+            <View
+              className="absolute inset-0 top-1/2 flex items-center justify-center"
+            >
+              <View
+                className="flex size-14 items-center justify-center rounded-full bg-primary"
+              >
+                <Image
+                  className="size-5 text-white"
+                  source={
+                    {
+                      "testUri": "../../../assets/icons/bag.png",
+                    }
+                  }
+                  testID="custom-icon"
+                  tintColor="#FFFF"
+                />
+              </View>
+            </View>
+          </View>
+          <Text
+            className="base-bold my-3 text-center text-dark-100"
+            testID="empty-data-title"
+          >
+            Cart Empty
+          </Text>
+          <Text
+            className="body-regular text-gray-200"
+            testID="empty-data-subtitle"
+          >
+            Add items to your cart to get started
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+</RNCSafeAreaView>
+`;
