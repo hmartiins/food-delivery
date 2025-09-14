@@ -7,6 +7,8 @@ import { StatusBar } from 'expo-status-bar';
 import * as Sentry from '@sentry/react-native';
 import './globals.css';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 import { useAuthStore } from '@/stores/auth.store';
 
 Sentry.init({
@@ -51,7 +53,7 @@ export default Sentry.wrap(function RootLayout() {
   if (!fontsLoaded || isLoading) return null;
 
   return (
-    <>
+    <GestureHandlerRootView>
       <StatusBar style="dark" />
       <Stack
         screenOptions={{
@@ -60,6 +62,6 @@ export default Sentry.wrap(function RootLayout() {
           gestureEnabled: true,
         }}
       />
-    </>
+    </GestureHandlerRootView>
   );
 });
