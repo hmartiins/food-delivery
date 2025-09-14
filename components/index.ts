@@ -6,4 +6,6 @@ export * from './CustomHeader';
 export * from './CustomInput';
 export * from './Filter';
 export * from './MenuCard';
+export * from './Portal';
+export * from './PortalProvider';
 export * from './SearchBar';
