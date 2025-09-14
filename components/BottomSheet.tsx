@@ -1,11 +1,15 @@
 import React from 'react';
 
-import { Dimensions, Text } from 'react-native';
+import { Dimensions, Pressable, Text } from 'react-native';
+
+import { BlurView } from 'expo-blur';
 
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
+  FadeIn,
+  FadeOut,
   SlideInDown,
   runOnJS,
   useAnimatedStyle,
@@ -15,7 +19,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 const { width } = Dimensions.get('window');
-const sheetHeight = 220;
+const sheetHeight = 320;
 const sheetOverDrag = 20;
 
 type Props = {
@@ -38,7 +42,7 @@ export const BottomSheet = ({ onClose }: Props) => {
       offset.value = offsetDelta > 0 ? offsetDelta : withSpring(clamp);
     })
     .onFinalize(() => {
-      if (offset.value < sheetHeight / 2) {
+      if (offset.value < sheetHeight / 3) {
         offset.value = withSpring(0);
       } else {
         offset.value = withTiming(sheetHeight, {}, () => runOnJS(close)());
@@ -50,27 +54,39 @@ export const BottomSheet = ({ onClose }: Props) => {
   }));
 
   return (
-    <GestureDetector gesture={gesture}>
+    <>
       <Animated.View
-        entering={SlideInDown.springify().damping(15)}
-        className={`absolute left-0 right-0 z-50 bg-primary`}
-        style={[
-          {
-            width,
-            height: sheetHeight,
-            bottom: -sheetOverDrag * 1.3,
-          },
-          translateY,
-        ]}
+        entering={FadeIn.duration(200)}
+        exiting={FadeOut.duration(200)}
+        className="absolute inset-0 z-40"
       >
-        <MaterialIcons
-          className="mt-4 self-center"
-          name="drag-handle"
-          size={24}
-          color="white"
-        />
-        <Text>BottomSheet</Text>
+        <BlurView intensity={20} tint="dark" className="flex-1">
+          <Pressable className="flex-1 bg-black/20" onPress={onClose} />
+        </BlurView>
       </Animated.View>
-    </GestureDetector>
+
+      <GestureDetector gesture={gesture}>
+        <Animated.View
+          entering={SlideInDown.springify().damping(15)}
+          className={`absolute left-0 right-0 z-50 rounded-t-3xl bg-white`}
+          style={[
+            {
+              width,
+              height: sheetHeight,
+              bottom: -sheetOverDrag * 1.3,
+            },
+            translateY,
+          ]}
+        >
+          <MaterialIcons
+            className="mt-4 self-center"
+            name="horizontal-rule"
+            color="gray"
+            size={24}
+          />
+          <Text>BottomSheet</Text>
+        </Animated.View>
+      </GestureDetector>
+    </>
   );
 };
