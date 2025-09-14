@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BottomSheet /> Snapshots should match snapshot with complex children 1`] = `
+[
+  <View
+    className="absolute inset-0 z-40"
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
+    testID="bottom-sheet-overlay"
+  >
+    <View
+      className="flex-1"
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID="blur-view"
+    >
+      <ViewManagerAdapter_ExpoBlurView
+        blurReductionFactor={4}
+        experimentalBlurMethod="none"
+        intensity={20}
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        tint="dark"
+      />
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        className="flex-1 bg-black/20"
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        testID="bottom-sheet-backdrop"
+      />
+    </View>
+  </View>,
+  <View
+    className="absolute left-0 right-0 z-50 rounded-t-3xl bg-white"
+    entering={BaseAnimationMock {}}
+    style={
+      [
+        {
+          "bottom": -26,
+          "height": 400,
+          "width": 750,
+        },
+        {},
+      ]
+    }
+    testID="bottom-sheet-container"
+  >
+    <Text
+      allowFontScaling={false}
+      className="mt-0 self-center"
+      selectable={false}
+      style={
+        [
+          {
+            "color": "gray",
+            "fontSize": 24,
+          },
+          undefined,
+          {
+            "fontFamily": "material",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          {},
+        ]
+      }
+      testID="bottom-sheet-handle"
+    >
+      
+    </Text>
+    <View
+      testID="complex-content"
+    >
+      <Text>
+        Title
+      </Text>
+      <Text>
+        Subtitle
+      </Text>
+      <View
+        testID="nested-view"
+      >
+        <Text>
+          Nested content
+        </Text>
+      </View>
+    </View>
+  </View>,
+]
+`;
+
+exports[`<BottomSheet /> Snapshots should match snapshot with default props 1`] = `
+[
+  <View
+    className="absolute inset-0 z-40"
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
+    testID="bottom-sheet-overlay"
+  >
+    <View
+      className="flex-1"
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID="blur-view"
+    >
+      <ViewManagerAdapter_ExpoBlurView
+        blurReductionFactor={4}
+        experimentalBlurMethod="none"
+        intensity={20}
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        tint="dark"
+      />
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        className="flex-1 bg-black/20"
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        testID="bottom-sheet-backdrop"
+      />
+    </View>
+  </View>,
+  <View
+    className="absolute left-0 right-0 z-50 rounded-t-3xl bg-white"
+    entering={BaseAnimationMock {}}
+    style={
+      [
+        {
+          "bottom": -26,
+          "height": 400,
+          "width": 750,
+        },
+        {},
+      ]
+    }
+    testID="bottom-sheet-container"
+  >
+    <Text
+      allowFontScaling={false}
+      className="mt-0 self-center"
+      selectable={false}
+      style={
+        [
+          {
+            "color": "gray",
+            "fontSize": 24,
+          },
+          undefined,
+          {
+            "fontFamily": "material",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          {},
+        ]
+      }
+      testID="bottom-sheet-handle"
+    >
+      
+    </Text>
+    <Text
+      testID="test-content"
+    >
+      Test Content
+    </Text>
+  </View>,
+]
+`;
+
+exports[`<BottomSheet /> Snapshots should match snapshot with different height 1`] = `
+[
+  <View
+    className="absolute inset-0 z-40"
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
+    testID="bottom-sheet-overlay"
+  >
+    <View
+      className="flex-1"
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID="blur-view"
+    >
+      <ViewManagerAdapter_ExpoBlurView
+        blurReductionFactor={4}
+        experimentalBlurMethod="none"
+        intensity={20}
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        tint="dark"
+      />
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        className="flex-1 bg-black/20"
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        testID="bottom-sheet-backdrop"
+      />
+    </View>
+  </View>,
+  <View
+    className="absolute left-0 right-0 z-50 rounded-t-3xl bg-white"
+    entering={BaseAnimationMock {}}
+    style={
+      [
+        {
+          "bottom": -26,
+          "height": 600,
+          "width": 750,
+        },
+        {},
+      ]
+    }
+    testID="bottom-sheet-container"
+  >
+    <Text
+      allowFontScaling={false}
+      className="mt-0 self-center"
+      selectable={false}
+      style={
+        [
+          {
+            "color": "gray",
+            "fontSize": 24,
+          },
+          undefined,
+          {
+            "fontFamily": "material",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          {},
+        ]
+      }
+      testID="bottom-sheet-handle"
+    >
+      
+    </Text>
+    <Text
+      testID="test-content"
+    >
+      Test Content
+    </Text>
+  </View>,
+]
+`;

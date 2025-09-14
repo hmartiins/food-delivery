@@ -59,17 +59,28 @@ export const BottomSheet = ({ onClose, children, height }: Props) => {
   return (
     <Portal name="bottom-sheet">
       <Animated.View
+        testID="bottom-sheet-overlay"
         entering={FadeIn.duration(200)}
         exiting={FadeOut.duration(200)}
         className="absolute inset-0 z-40"
       >
-        <BlurView intensity={20} tint="dark" className="flex-1">
-          <Pressable className="flex-1 bg-black/20" onPress={onClose} />
+        <BlurView
+          testID="blur-view"
+          intensity={20}
+          tint="dark"
+          className="flex-1"
+        >
+          <Pressable
+            testID="bottom-sheet-backdrop"
+            className="flex-1 bg-black/20"
+            onPress={onClose}
+          />
         </BlurView>
       </Animated.View>
 
       <GestureDetector gesture={gesture}>
         <Animated.View
+          testID="bottom-sheet-container"
           entering={SlideInDown.springify().damping(15)}
           className={`absolute left-0 right-0 z-50 rounded-t-3xl bg-white`}
           style={[
@@ -82,6 +93,7 @@ export const BottomSheet = ({ onClose, children, height }: Props) => {
           ]}
         >
           <MaterialIcons
+            testID="bottom-sheet-handle"
             className="mt-0 self-center"
             name="horizontal-rule"
             color="gray"
