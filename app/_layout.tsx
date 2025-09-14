@@ -9,6 +9,7 @@ import './globals.css';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+import { PortalProvider } from '@/components';
 import { useAuthStore } from '@/stores/auth.store';
 
 Sentry.init({
@@ -54,14 +55,16 @@ export default Sentry.wrap(function RootLayout() {
 
   return (
     <GestureHandlerRootView>
-      <StatusBar style="dark" />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          animation: 'ios_from_right',
-          gestureEnabled: true,
-        }}
-      />
+      <PortalProvider>
+        <StatusBar style="dark" />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            animation: 'ios_from_right',
+            gestureEnabled: true,
+          }}
+        />
+      </PortalProvider>
     </GestureHandlerRootView>
   );
 });
