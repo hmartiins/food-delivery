@@ -18,6 +18,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
+import { Portal } from './Portal';
+
 const { width } = Dimensions.get('window');
 const sheetHeight = 320;
 const sheetOverDrag = 20;
@@ -54,7 +56,7 @@ export const BottomSheet = ({ onClose }: Props) => {
   }));
 
   return (
-    <>
+    <Portal name="bottom-sheet">
       <Animated.View
         entering={FadeIn.duration(200)}
         exiting={FadeOut.duration(200)}
@@ -87,6 +89,6 @@ export const BottomSheet = ({ onClose }: Props) => {
           <Text>BottomSheet</Text>
         </Animated.View>
       </GestureDetector>
-    </>
+    </Portal>
   );
 };
