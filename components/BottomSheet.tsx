@@ -1,6 +1,6 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-import { Dimensions, Pressable, Text } from 'react-native';
+import { Dimensions, Pressable } from 'react-native';
 
 import { BlurView } from 'expo-blur';
 
@@ -21,14 +21,15 @@ import Animated, {
 import { Portal } from './Portal';
 
 const { width } = Dimensions.get('window');
-const sheetHeight = 320;
 const sheetOverDrag = 20;
 
 type Props = {
+  height: number;
+  children: ReactNode;
   onClose: () => void;
 };
 
-export const BottomSheet = ({ onClose }: Props) => {
+export const BottomSheet = ({ onClose, children, height }: Props) => {
   const offset = useSharedValue(0);
 
   function close() {
@@ -44,10 +45,10 @@ export const BottomSheet = ({ onClose }: Props) => {
       offset.value = offsetDelta > 0 ? offsetDelta : withSpring(clamp);
     })
     .onFinalize(() => {
-      if (offset.value < sheetHeight / 3) {
+      if (offset.value < height / 3) {
         offset.value = withSpring(0);
       } else {
-        offset.value = withTiming(sheetHeight, {}, () => runOnJS(close)());
+        offset.value = withTiming(height, {}, () => runOnJS(close)());
       }
     });
 
@@ -74,19 +75,19 @@ export const BottomSheet = ({ onClose }: Props) => {
           style={[
             {
               width,
-              height: sheetHeight,
+              height,
               bottom: -sheetOverDrag * 1.3,
             },
             translateY,
           ]}
         >
           <MaterialIcons
-            className="mt-4 self-center"
+            className="mt-0 self-center"
             name="horizontal-rule"
             color="gray"
             size={24}
           />
-          <Text>BottomSheet</Text>
+          {children}
         </Animated.View>
       </GestureDetector>
     </Portal>
