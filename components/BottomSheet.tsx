@@ -81,7 +81,7 @@ export const BottomSheet = ({ onClose, children, height }: Props) => {
       <GestureDetector gesture={gesture}>
         <Animated.View
           testID="bottom-sheet-container"
-          entering={SlideInDown.springify().damping(15)}
+          entering={SlideInDown.springify()}
           className={`absolute left-0 right-0 z-50 rounded-t-3xl bg-white`}
           style={[
             {
