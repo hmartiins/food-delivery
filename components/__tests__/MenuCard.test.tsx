@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/react-native';
 
+import { renderWithPortal } from '@/helpers';
 import { MenuItem } from '@/type';
 
 import { MenuCard } from '../MenuCard';
@@ -151,8 +152,42 @@ describe('<MenuCard />', () => {
     expect(mockAddItem).toHaveBeenCalledTimes(3);
   });
 
+  it('does not show bottom sheet initially', () => {
+    const { queryByTestId } = render(<MenuCard item={mockMenuItem} />);
+
+    expect(queryByTestId('bottom-sheet-container')).toBeNull();
+  });
+
+  it('shows bottom sheet after pressing add to cart button', () => {
+    const { getByTestId, queryByTestId, getByText } = renderWithPortal(
+      <MenuCard item={mockMenuItem} />
+    );
+    const addButton = getByTestId('add-to-cart-button');
+
+    expect(queryByTestId('bottom-sheet-container')).toBeNull();
+
+    fireEvent.press(addButton);
+
+    expect(getByTestId('bottom-sheet-container')).toBeTruthy();
+
+    expect(getByText('Product Added')).toBeTruthy();
+    expect(
+      getByText('You can continue shopping or view your cart')
+    ).toBeTruthy();
+    expect(getByText('Go to Cart')).toBeTruthy();
+  });
+
   it('snapshot of the component', () => {
     const { toJSON } = render(<MenuCard item={mockMenuItem} />);
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  it('snapshot of the component with bottom sheet open', () => {
+    const { getByTestId, toJSON } = render(<MenuCard item={mockMenuItem} />);
+    const addButton = getByTestId('add-to-cart-button');
+
+    fireEvent.press(addButton);
 
     expect(toJSON()).toMatchSnapshot();
   });
