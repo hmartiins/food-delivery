@@ -10,7 +10,7 @@ export default function TabLayout() {
   if (!isAuthenticated) return <Redirect href="/sign-in" />;
 
   return (
-    <NativeTabs>
+    <NativeTabs minimizeBehavior="onScrollDown">
       <NativeTabs.Trigger name="index">
         <Icon sf={'house.fill'} drawable="ic_menu_home" />
         <Label>Home</Label>
