@@ -6,8 +6,11 @@ import { Link, router } from 'expo-router';
 
 import { CustomButton, CustomInput } from '@/components';
 import { signIn } from '@/lib/appwrite';
+import { useAuthStore } from '@/stores/auth.store';
 
 export default function SignIn() {
+  const { fetchAuthenticatedUser } = useAuthStore();
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: '',
@@ -26,6 +29,7 @@ export default function SignIn() {
 
     try {
       await signIn({ email, password });
+      await fetchAuthenticatedUser();
       router.replace('/');
     } catch (error: any) {
       Alert.alert('Error', error.message);
