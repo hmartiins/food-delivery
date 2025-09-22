@@ -42,7 +42,7 @@
   }
 
   .custom-btn-outline {
-    @apply flex w-full flex-row justify-center rounded-full bg-primary/10 p-3 border border-primary;
+    @apply flex w-full flex-row justify-center rounded-full bg-primary/5 p-3 border border-primary;
   }
 
   .custom-btn-red {
