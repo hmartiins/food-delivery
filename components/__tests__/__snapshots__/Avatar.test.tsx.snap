@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Avatar /> Snapshots should match snapshot with default props 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+  testID="avatar-container"
+>
+  <Image
+    className="size-24 rounded-full"
+    resizeMode="contain"
+    source={
+      {
+        "uri": "https://github.com/hmartiins.png",
+      }
+    }
+    testID="avatar-image"
+  />
+</View>
+`;
+
+exports[`<Avatar /> Snapshots should match snapshot with hasEdit false 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+  testID="avatar-container"
+>
+  <Image
+    className="size-24 rounded-full"
+    resizeMode="contain"
+    source={
+      {
+        "uri": "https://github.com/hmartiins.png",
+      }
+    }
+    testID="avatar-image"
+  />
+</View>
+`;
+
+exports[`<Avatar /> Snapshots should match snapshot with hasEdit true 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+  testID="avatar-container"
+>
+  <Image
+    className="size-24 rounded-full"
+    resizeMode="contain"
+    source={
+      {
+        "uri": "https://github.com/hmartiins.png",
+      }
+    }
+    testID="avatar-image"
+  />
+  <View
+    className="absolute bottom-0 right-0 size-7 rounded-full border border-white-100 bg-primary"
+    testID="avatar-edit-badge"
+  >
+    <Image
+      className="mx-auto my-auto mt-auto size-3"
+      resizeMode="contain"
+      source={
+        {
+          "testUri": "../../../assets/icons/pencil.png",
+        }
+      }
+      testID="avatar-edit-icon"
+    />
+  </View>
+</View>
+`;
