@@ -4,6 +4,8 @@ import { Text, View } from 'react-native';
 
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { renderWithPortal } from '@/helpers';
+
 import { BottomSheet } from '../BottomSheet';
 import { PortalProvider } from '../PortalProvider';
 
@@ -27,10 +29,6 @@ jest.mock('react-native-gesture-handler', () => {
     GestureDetector: ({ children }: { children: React.ReactNode }) => children,
   };
 });
-
-const renderWithPortal = (component: React.ReactElement) => {
-  return render(<PortalProvider>{component}</PortalProvider>);
-};
 
 describe('<BottomSheet />', () => {
   const defaultProps = {
