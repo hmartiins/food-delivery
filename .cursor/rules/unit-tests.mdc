@@ -7,6 +7,7 @@ alwaysApply: false
 
 ## Fundamental Principles
 
+- **NEVER**: change the logic of the base component
 - **FOCUS ONLY ON FUNCTIONALITY**: Test behaviors and interactions, not visual aspects
 - **DO NOT test**: styles, StyleSheet objects, colors, sizes, positioning, or any visual aspect
 - **TEST**: functionalities, user interactions, states, props, callbacks, and business logic

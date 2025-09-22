@@ -1,0 +1,18 @@
+---
+description: Language rules for the project
+globs:
+alwaysApply: true
+---
+
+# Language Rules
+
+## Always use English for code and documentation
+
+- All code comments must be written in English
+- All variable names, function names, class names, and file names must use English words
+- All documentation (README files, JSDoc comments, etc.) must be written in English
+- All commit messages must be in English
+- All error messages and user-facing text should be in English
+- All test descriptions and assertions should be in English
+
+This ensures consistency across the codebase and makes it accessible to a broader range of developers.
