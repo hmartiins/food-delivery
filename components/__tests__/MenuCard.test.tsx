@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react-native';
+import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { renderWithPortal } from '@/helpers';
 import { MenuItem } from '@/type';
@@ -11,6 +11,10 @@ jest.mock('@/stores/cart.store', () => ({
   useCartStore: () => ({
     addItem: mockAddItem,
   }),
+}));
+
+jest.mock('@expo/vector-icons', () => ({
+  MaterialIcons: (props: any) => 'MockedMaterialIcon',
 }));
 
 describe('<MenuCard />', () => {
@@ -66,11 +70,11 @@ describe('<MenuCard />', () => {
     });
   });
 
-  it('calls addItem when add to cart button is pressed', () => {
+  it('calls addItem when add to cart button is pressed', async () => {
     const { getByTestId } = render(<MenuCard item={mockMenuItem} />);
     const addButton = getByTestId('add-to-cart-button');
 
-    fireEvent.press(addButton);
+    await act(async () => fireEvent.press(addButton));
 
     expect(mockAddItem).toHaveBeenCalledTimes(1);
     expect(mockAddItem).toHaveBeenCalledWith({
@@ -141,13 +145,15 @@ describe('<MenuCard />', () => {
     expect(imageElement.props.source).toEqual({ uri: '' });
   });
 
-  it('multiple button presses call addItem multiple times', () => {
+  it('multiple button presses call addItem multiple times', async () => {
     const { getByTestId } = render(<MenuCard item={mockMenuItem} />);
     const addButton = getByTestId('add-to-cart-button');
 
-    fireEvent.press(addButton);
-    fireEvent.press(addButton);
-    fireEvent.press(addButton);
+    await act(async () => {
+      fireEvent.press(addButton);
+      fireEvent.press(addButton);
+      fireEvent.press(addButton);
+    });
 
     expect(mockAddItem).toHaveBeenCalledTimes(3);
   });
@@ -158,7 +164,7 @@ describe('<MenuCard />', () => {
     expect(queryByTestId('bottom-sheet-container')).toBeNull();
   });
 
-  it('shows bottom sheet after pressing add to cart button', () => {
+  it('shows bottom sheet after pressing add to cart button', async () => {
     const { getByTestId, queryByTestId, getByText } = renderWithPortal(
       <MenuCard item={mockMenuItem} />
     );
@@ -166,7 +172,7 @@ describe('<MenuCard />', () => {
 
     expect(queryByTestId('bottom-sheet-container')).toBeNull();
 
-    fireEvent.press(addButton);
+    await act(async () => fireEvent.press(addButton));
 
     expect(getByTestId('bottom-sheet-container')).toBeTruthy();
 
@@ -183,11 +189,11 @@ describe('<MenuCard />', () => {
     expect(toJSON()).toMatchSnapshot();
   });
 
-  it('snapshot of the component with bottom sheet open', () => {
+  it('snapshot of the component with bottom sheet open', async () => {
     const { getByTestId, toJSON } = render(<MenuCard item={mockMenuItem} />);
     const addButton = getByTestId('add-to-cart-button');
 
-    fireEvent.press(addButton);
+    await act(async () => fireEvent.press(addButton));
 
     expect(toJSON()).toMatchSnapshot();
   });

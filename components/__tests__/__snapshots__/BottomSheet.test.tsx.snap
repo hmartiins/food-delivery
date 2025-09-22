@@ -85,29 +85,7 @@ exports[`<BottomSheet /> Snapshots should match snapshot with complex children 1
     }
     testID="bottom-sheet-container"
   >
-    <Text
-      allowFontScaling={false}
-      className="mt-0 self-center"
-      selectable={false}
-      style={
-        [
-          {
-            "color": "gray",
-            "fontSize": 24,
-          },
-          undefined,
-          {
-            "fontFamily": "material",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          {},
-        ]
-      }
-      testID="bottom-sheet-handle"
-    >
-      
-    </Text>
+    MockedMaterialIcon
     <View
       testID="complex-content"
     >
@@ -214,29 +192,7 @@ exports[`<BottomSheet /> Snapshots should match snapshot with default props 1`] 
     }
     testID="bottom-sheet-container"
   >
-    <Text
-      allowFontScaling={false}
-      className="mt-0 self-center"
-      selectable={false}
-      style={
-        [
-          {
-            "color": "gray",
-            "fontSize": 24,
-          },
-          undefined,
-          {
-            "fontFamily": "material",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          {},
-        ]
-      }
-      testID="bottom-sheet-handle"
-    >
-      
-    </Text>
+    MockedMaterialIcon
     <Text
       testID="test-content"
     >
@@ -331,29 +287,7 @@ exports[`<BottomSheet /> Snapshots should match snapshot with different height 1
     }
     testID="bottom-sheet-container"
   >
-    <Text
-      allowFontScaling={false}
-      className="mt-0 self-center"
-      selectable={false}
-      style={
-        [
-          {
-            "color": "gray",
-            "fontSize": 24,
-          },
-          undefined,
-          {
-            "fontFamily": "material",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          {},
-        ]
-      }
-      testID="bottom-sheet-handle"
-    >
-      
-    </Text>
+    MockedMaterialIcon
     <Text
       testID="test-content"
     >

@@ -1,8 +1,6 @@
-import React from 'react';
-
 import { Text, View } from 'react-native';
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { renderWithPortal } from '@/helpers';
 
@@ -29,6 +27,10 @@ jest.mock('react-native-gesture-handler', () => {
     GestureDetector: ({ children }: { children: React.ReactNode }) => children,
   };
 });
+
+jest.mock('@expo/vector-icons', () => ({
+  MaterialIcons: (props: any) => 'MockedMaterialIcon',
+}));
 
 describe('<BottomSheet />', () => {
   const defaultProps = {
@@ -111,32 +113,32 @@ describe('<BottomSheet />', () => {
   });
 
   describe('Interactions', () => {
-    it('should call onClose when backdrop is pressed', () => {
+    it('should call onClose when backdrop is pressed', async () => {
       const mockOnClose = jest.fn();
       renderWithPortal(<BottomSheet {...defaultProps} onClose={mockOnClose} />);
 
       const backdrop = screen.getByTestId('bottom-sheet-backdrop');
-      fireEvent.press(backdrop);
+      await act(async () => fireEvent.press(backdrop));
 
       expect(mockOnClose).toHaveBeenCalledTimes(1);
     });
 
-    it('should not call onClose when container is pressed', () => {
+    it('should not call onClose when container is pressed', async () => {
       const mockOnClose = jest.fn();
       renderWithPortal(<BottomSheet {...defaultProps} onClose={mockOnClose} />);
 
       const container = screen.getByTestId('bottom-sheet-container');
-      fireEvent.press(container);
+      await act(async () => fireEvent.press(container));
 
       expect(mockOnClose).not.toHaveBeenCalled();
     });
 
-    it('should not call onClose when children are pressed', () => {
+    it('should not call onClose when children are pressed', async () => {
       const mockOnClose = jest.fn();
       renderWithPortal(<BottomSheet {...defaultProps} onClose={mockOnClose} />);
 
       const content = screen.getByTestId('test-content');
-      fireEvent.press(content);
+      await act(async () => fireEvent.press(content));
 
       expect(mockOnClose).not.toHaveBeenCalled();
     });
