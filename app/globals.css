@@ -41,6 +41,14 @@
     @apply flex w-full flex-row justify-center rounded-full bg-primary p-3;
   }
 
+  .custom-btn-outline {
+    @apply flex w-full flex-row justify-center rounded-full bg-primary/10 p-3 border border-primary;
+  }
+
+  .custom-btn-red {
+    @apply flex w-full flex-row justify-center rounded-full bg-red-50 p-3 border border-red-500;
+  }
+
   .custom-header {
     @apply mb-10 flex w-full flex-row items-center justify-between;
   }

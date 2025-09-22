@@ -23,7 +23,9 @@ export const CustomButton = ({
             color="#fff"
           />
         ) : (
-          <Text className={cn('paragraph-semibold text-white-100', textStyle)}>
+          <Text
+            className={cn('paragraph-semibold', textStyle || 'text-white-100')}
+          >
             {title}
           </Text>
         )}
