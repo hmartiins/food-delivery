@@ -1,3 +1,4 @@
+export * from './Avatar';
 export * from './BottomSheet';
 export * from './CartButton';
 export * from './CartItem';
@@ -8,4 +9,5 @@ export * from './Filter';
 export * from './MenuCard';
 export * from './Portal';
 export * from './PortalProvider';
+export * from './ProfileInfo';
 export * from './SearchBar';
