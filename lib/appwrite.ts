@@ -1,3 +1,5 @@
+import { router } from 'expo-router';
+
 import {
   Account,
   Avatars,
@@ -73,7 +75,16 @@ export const createUser = async ({
 
 export const signIn = async ({ email, password }: SignInParams) => {
   try {
-    const session = await account.createEmailPasswordSession(email, password);
+    await account.createEmailPasswordSession(email, password);
+  } catch (error) {
+    throw new Error(error as string);
+  }
+};
+
+export const logout = async () => {
+  try {
+    await account.deleteSession('current');
+    router.replace('/sign-in');
   } catch (error) {
     throw new Error(error as string);
   }
